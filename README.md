@@ -10,6 +10,8 @@ git merge upstream/main --allow-unrelated-histories
 git push
 ```
 
+New Changes
+
 ## Introduction
 
 Unfortunately, it seems your company never learns.
