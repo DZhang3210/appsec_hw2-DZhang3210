@@ -1,0 +1,240 @@
+[
+{
+    "model": "LegacySite.user",
+    "pk": 1,
+    "fields": {
+        "last_login": null,
+        "username": "admin",
+        "password": "000000000000000000000000000078d2$18821d89de11ab18488fdc0a01f1ddf4d290e198b0f80cd4974fc031dc2615a3"
+    }
+},
+{
+    "model": "LegacySite.user",
+    "pk": 2,
+    "fields": {
+        "last_login": null,
+        "username": "test2",
+        "password": "000000000000000000000000000078d2$3ce31585b23f69ac17ac91609ad325d9bd0ddeb9925816c390f3b5dcc74d4163"
+    }
+},
+{
+    "model": "LegacySite.user",
+    "pk": 3,
+    "fields": {
+        "last_login": "2024-02-19T22:49:18.513Z",
+        "username": "dz2188@nyu.edu",
+        "password": "000000000000000000000000000078d2$9d959ddee6e571e6ab8e2698f07cfd9b0edfd076fbdb0692b54a83f3d521ae87"
+    }
+},
+{
+    "model": "LegacySite.user",
+    "pk": 4,
+    "fields": {
+        "last_login": "2024-02-23T20:08:16.807Z",
+        "username": "dzz2188@nyu.edu",
+        "password": "000000000000000000000000000078d2$5a869e51f91daa50e295a85935892cfab9e38d5f9d56752215843071457982e7"
+    }
+},
+{
+    "model": "LegacySite.product",
+    "pk": 1,
+    "fields": {
+        "product_name": "NYU Apparel Card",
+        "product_image_path": "/images/product_1.jpg",
+        "recommended_price": 95,
+        "description": "Use this card to buy NYU Clothing!"
+    }
+},
+{
+    "model": "LegacySite.product",
+    "pk": 2,
+    "fields": {
+        "product_name": "Tandon Food Court Card",
+        "product_image_path": "/images/product_2.jpg",
+        "recommended_price": 30,
+        "description": "Use this card to buy food at the Tandon Food Court!"
+    }
+},
+{
+    "model": "LegacySite.product",
+    "pk": 3,
+    "fields": {
+        "product_name": "Graduation Robe Card",
+        "product_image_path": "/images/product_3.jpg",
+        "recommended_price": 199,
+        "description": "Why worry about this later? Buy this card to make graduation easier!"
+    }
+},
+{
+    "model": "LegacySite.product",
+    "pk": 4,
+    "fields": {
+        "product_name": "Semester's Book Card",
+        "product_image_path": "/images/product_5.jpg",
+        "recommended_price": 777,
+        "description": "So much to read, so little time. Buy this to make payment at the book store quicker and easier!"
+    }
+},
+{
+    "model": "LegacySite.product",
+    "pk": 5,
+    "fields": {
+        "product_name": "NYU Electronics Card",
+        "product_image_path": "/images/product_6.jpg",
+        "recommended_price": 500,
+        "description": "Need a new laptop? No problem! This card can be used to buy electronics at the NYU Bookstore."
+    }
+},
+{
+    "model": "LegacySite.product",
+    "pk": 6,
+    "fields": {
+        "product_name": "Tuition Card",
+        "product_image_path": "/images/product_7.jpg",
+        "recommended_price": 1999,
+        "description": "Need to pay for those credits? Pick up this card to make the process easier!"
+    }
+},
+{
+    "model": "LegacySite.product",
+    "pk": 7,
+    "fields": {
+        "product_name": "NYU Gym Card",
+        "product_image_path": "/images/product_8.jpg",
+        "recommended_price": 450,
+        "description": "Want summer gym access for your entire degree? This card should cover it!"
+    }
+},
+{
+    "model": "LegacySite.card",
+    "pk": 1,
+    "fields": {
+        "data": "eyJtZXJjaGFudF9pZCI6ICJOWVUgQXBwYXJlbCBDYXJkIiwgImN1c3RvbWVyX2lkIjogImR6MjE4OEBueXUuZWR1IiwgInRvdGFsX3ZhbHVlIjogIjEwMCIsICJyZWNvcmRzIjogW3sicmVjb3JkX3R5cGUiOiAiYW1vdW50X2NoYW5nZSIsICJhbW91bnRfYWRkZWQiOiAyMDAwLCAic2lnbmF0dXJlIjogImNmNzJkYzc0ODFiYWZkODNkMmVlOWEyNjhiY2UxODA3In1dfQ==",
+        "product": 1,
+        "amount": 100,
+        "fp": "/var/folders/l8/cq7620ds1d9d3kqpv79rh4000000gn/T/addedcard_3_1.gftcrd",
+        "user": 3,
+        "used": true
+    }
+},
+{
+    "model": "LegacySite.card",
+    "pk": 2,
+    "fields": {
+        "data": "eyJtZXJjaGFudF9pZCI6ICJOWVUgQXBwYXJlbCBDYXJkIiwgImN1c3RvbWVyX2lkIjogImR6MjE4OEBueXUuZWR1IiwgInRvdGFsX3ZhbHVlIjogIjIwMCIsICJyZWNvcmRzIjogW3sicmVjb3JkX3R5cGUiOiAiYW1vdW50X2NoYW5nZSIsICJhbW91bnRfYWRkZWQiOiAyMDAwLCAic2lnbmF0dXJlIjogIjBmYWNiYTNiMzUxMTFmZTkxYjUzYzRlNTgwODgyODg4In1dfQ==",
+        "product": 1,
+        "amount": 200,
+        "fp": "/var/folders/l8/cq7620ds1d9d3kqpv79rh4000000gn/T/addedcard_3_2.gftcrd",
+        "user": 3,
+        "used": true
+    }
+},
+{
+    "model": "LegacySite.card",
+    "pk": 3,
+    "fields": {
+        "data": "eyJtZXJjaGFudF9pZCI6ICJOWVUgQXBwYXJlbCBDYXJkIiwgImN1c3RvbWVyX2lkIjogImR6MjE4OEBueXUuZWR1IiwgInRvdGFsX3ZhbHVlIjogIjEwMCIsICJyZWNvcmRzIjogW3sicmVjb3JkX3R5cGUiOiAiYW1vdW50X2NoYW5nZSIsICJhbW91bnRfYWRkZWQiOiAyMDAwLCAic2lnbmF0dXJlIjogIjczMDhhODlhYTUyOTA4MTYzYjkyYjM2NTk4MjhmMGQyIn1dfQ==",
+        "product": 1,
+        "amount": 100,
+        "fp": "/var/folders/l8/cq7620ds1d9d3kqpv79rh4000000gn/T/addedcard_3_3.gftcrd",
+        "user": 3,
+        "used": true
+    }
+},
+{
+    "model": "LegacySite.card",
+    "pk": 4,
+    "fields": {
+        "data": "eyJtZXJjaGFudF9pZCI6ICJOWVUgQXBwYXJlbCBDYXJkIiwgImN1c3RvbWVyX2lkIjogImR6MjE4OEBueXUuZWR1IiwgInRvdGFsX3ZhbHVlIjogIjEwMCIsICJyZWNvcmRzIjogW3sicmVjb3JkX3R5cGUiOiAiYW1vdW50X2NoYW5nZSIsICJhbW91bnRfYWRkZWQiOiAyMDAwLCAic2lnbmF0dXJlIjogImM3Y2RkMTQ0MTBkZDM4NmJhNzIzMjQ1YzZjODMyOWVkIn1dfQ==",
+        "product": 1,
+        "amount": 100,
+        "fp": "/var/folders/l8/cq7620ds1d9d3kqpv79rh4000000gn/T/addedcard_3_4.gftcrd",
+        "user": 3,
+        "used": true
+    }
+},
+{
+    "model": "LegacySite.card",
+    "pk": 5,
+    "fields": {
+        "data": "eyJtZXJjaGFudF9pZCI6ICJOWVUgQXBwYXJlbCBDYXJkIiwgImN1c3RvbWVyX2lkIjogImR6MjE4OEBueXUuZWR1IiwgInRvdGFsX3ZhbHVlIjogIjEwMCIsICJyZWNvcmRzIjogW3sicmVjb3JkX3R5cGUiOiAiYW1vdW50X2NoYW5nZSIsICJhbW91bnRfYWRkZWQiOiAyMDAwLCAic2lnbmF0dXJlIjogIjE1Y2NmNjJkN2UzZGQxNTNiMTZiZGIyODJjYmZmN2Y1In1dfQ==",
+        "product": 1,
+        "amount": 100,
+        "fp": "/var/folders/l8/cq7620ds1d9d3kqpv79rh4000000gn/T/addedcard_3_5.gftcrd",
+        "user": 3,
+        "used": true
+    }
+},
+{
+    "model": "LegacySite.card",
+    "pk": 6,
+    "fields": {
+        "data": "eyJtZXJjaGFudF9pZCI6ICJOWVUgQXBwYXJlbCBDYXJkIiwgImN1c3RvbWVyX2lkIjogImR6MjE4OEBueXUuZWR1IiwgInRvdGFsX3ZhbHVlIjogIjEwMCIsICJyZWNvcmRzIjogW3sicmVjb3JkX3R5cGUiOiAiYW1vdW50X2NoYW5nZSIsICJhbW91bnRfYWRkZWQiOiAyMDAwLCAic2lnbmF0dXJlIjogIjM3NGEzOWJlMTNlNGMzNjk3ZWExNjcwYWFmNTBiYWE5In1dfQ==",
+        "product": 1,
+        "amount": 100,
+        "fp": "/var/folders/l8/cq7620ds1d9d3kqpv79rh4000000gn/T/addedcard_3_6.gftcrd",
+        "user": 3,
+        "used": true
+    }
+},
+{
+    "model": "LegacySite.card",
+    "pk": 7,
+    "fields": {
+        "data": "eyJtZXJjaGFudF9pZCI6ICJOWVUgQXBwYXJlbCBDYXJkIiwgImN1c3RvbWVyX2lkIjogImR6ejIxODhAbnl1LmVkdSIsICJ0b3RhbF92YWx1ZSI6ICIxMDAwIiwgInJlY29yZHMiOiBbeyJyZWNvcmRfdHlwZSI6ICJhbW91bnRfY2hhbmdlIiwgImFtb3VudF9hZGRlZCI6IDIwMDAsICJzaWduYXR1cmUiOiAiOGRkYzFmZTJjNGQ0NDI3MDFlZTFiYzM4ZTE5MDE5NDIifV19",
+        "product": 1,
+        "amount": 1000,
+        "fp": "/var/folders/l8/cq7620ds1d9d3kqpv79rh4000000gn/T/addedcard_3_7.gftcrd",
+        "user": 3,
+        "used": false
+    }
+},
+{
+    "model": "LegacySite.card",
+    "pk": 8,
+    "fields": {
+        "data": "eyJtZXJjaGFudF9pZCI6ICJOWVUgQXBwYXJlbCBDYXJkIiwgImN1c3RvbWVyX2lkIjogImR6ejIxODhAbnl1LmVkdSIsICJ0b3RhbF92YWx1ZSI6ICIxMDAwIiwgInJlY29yZHMiOiBbeyJyZWNvcmRfdHlwZSI6ICJhbW91bnRfY2hhbmdlIiwgImFtb3VudF9hZGRlZCI6IDIwMDAsICJzaWduYXR1cmUiOiAiMTA1OTI5ZWZiNThjMzZlOTJjZmI5MDI1ZDk3MDI5YmEifV19",
+        "product": 1,
+        "amount": 1000,
+        "fp": "/var/folders/l8/cq7620ds1d9d3kqpv79rh4000000gn/T/addedcard_4_1.gftcrd",
+        "user": 4,
+        "used": false
+    }
+},
+{
+    "model": "LegacySite.card",
+    "pk": 9,
+    "fields": {
+        "data": "eyJtZXJjaGFudF9pZCI6ICJOWVUgQXBwYXJlbCBDYXJkIiwgImN1c3RvbWVyX2lkIjogImR6ejIxODhAbnl1LmVkdSIsICJ0b3RhbF92YWx1ZSI6ICIxMDAwIiwgInJlY29yZHMiOiBbeyJyZWNvcmRfdHlwZSI6ICJhbW91bnRfY2hhbmdlIiwgImFtb3VudF9hZGRlZCI6IDIwMDAsICJzaWduYXR1cmUiOiAiMzQzY2FjODI1YWYzYzM3ZTI3NWRlMTE0NDUxZWQzYWMifV19",
+        "product": 1,
+        "amount": 1000,
+        "fp": "/var/folders/l8/cq7620ds1d9d3kqpv79rh4000000gn/T/addedcard_4_2.gftcrd",
+        "user": 4,
+        "used": false
+    }
+},
+{
+    "model": "LegacySite.card",
+    "pk": 10,
+    "fields": {
+        "data": "eyJtZXJjaGFudF9pZCI6ICJOWVUgQXBwYXJlbCBDYXJkIiwgImN1c3RvbWVyX2lkIjogImR6ejIxODhAbnl1LmVkdSIsICJ0b3RhbF92YWx1ZSI6ICIxMDAwIiwgInJlY29yZHMiOiBbeyJyZWNvcmRfdHlwZSI6ICJhbW91bnRfY2hhbmdlIiwgImFtb3VudF9hZGRlZCI6IDIwMDAsICJzaWduYXR1cmUiOiAiZTc1ZGMyNjAwNjZhZDEyMDE5MWExMTZhNTYzMGI5NzkifV19",
+        "product": 1,
+        "amount": 1000,
+        "fp": "/var/folders/l8/cq7620ds1d9d3kqpv79rh4000000gn/T/addedcard_4_3.gftcrd",
+        "user": 4,
+        "used": false
+    }
+},
+{
+    "model": "LegacySite.card",
+    "pk": 11,
+    "fields": {
+        "data": "eyJtZXJjaGFudF9pZCI6ICJOWVUgQXBwYXJlbCBDYXJkIiwgImN1c3RvbWVyX2lkIjogImR6ejIxODhAbnl1LmVkdSIsICJ0b3RhbF92YWx1ZSI6ICI1MDAiLCAicmVjb3JkcyI6IFt7InJlY29yZF90eXBlIjogImFtb3VudF9jaGFuZ2UiLCAiYW1vdW50X2FkZGVkIjogMjAwMCwgInNpZ25hdHVyZSI6ICJlZGNhMGEyNGI4M2Y0MWUzYjRhM2M2ZWY4OGMwYjdkOCJ9XX0=",
+        "product": 1,
+        "amount": 500,
+        "fp": "/var/folders/l8/cq7620ds1d9d3kqpv79rh4000000gn/T/addedcard_4_4.gftcrd",
+        "user": 4,
+        "used": false
+    }
+}
+]

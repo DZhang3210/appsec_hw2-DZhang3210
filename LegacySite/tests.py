@@ -4,6 +4,7 @@ import json
 from django.test import TestCase, Client
 from django.db import connection
 from LegacySite.models import Card, User
+from django.core.files.uploadedfile import SimpleUploadedFile
 
 """
 Test Database Isolation: 
@@ -24,7 +25,7 @@ class MyTest(TestCase):
     # You can read more about fixtures here:
     #    https://docs.djangoproject.com/en/4.0/topics/testing/tools/#fixture-loading
     # When you create your fixture, remember to uncomment the line where, fixtures = ["testdata.json"]
-    # fixtures = ["testdata.json"]
+    fixtures = ["testdata.json"]
 
     """
     Setup Method: 
@@ -52,11 +53,39 @@ class MyTest(TestCase):
         canLogin = self.client.login(username=username, password=password)
         self.assertTrue(canLogin)
 
+    def test_xss_attack(self):
+        response = self.client.get("/gift/?director=<script>alert('hello')</script>")
+        self.assertEqual(response.status_code, 400)
+
+    def test_csrf(self):
+        response = self.client.get('/gift', {'username': 'test2', 'amount': '1000'})
+        self.assertEqual(response.status_code, 400)
+
+                
+    # def test_sqli_attack(self):
+    #     malicious_data = json.dumps({
+    #         "records": [
+    #             {
+    #                 "record_type": "amount_change",
+    #                 "amount_added": 2000,
+    #                 "signature": "edca0a24b83f41e3b4a3c6ef88c0b7d8' UNION SELECT password FROM LegacySite_user WHERE username = 'admin'; --"
+    #             }
+    #         ]
+    #     })
+    #     malicious_file = SimpleUploadedFile('malicious_file.gftcrd', malicious_data.encode('utf-8'), content_type='application/json')
+    #     form_data = {'card_supplied': 'True','card_fname': 'malicious_file',}
+
+    #     files = {'card_data': malicious_file,}
+
+    #     response = self.client.post('/use', data = form_data, files=files)
+        
+    #     self.assertEqual(response.status_code, 400)
+
     # Assuming that your database had at least no Card in it,
     # this test should pass.
-    def test_get_card(self):
-        all_cards = Card.objects.all()
-        self.assertEqual(len(all_cards), 0)
+    # def test_get_card(self):
+    #     all_cards = Card.objects.all()
+    #     self.assertEqual(len(all_cards), 0)
 
     def test_buy(self):
         # Make requests to our endpoint and ensure it returned status code 200

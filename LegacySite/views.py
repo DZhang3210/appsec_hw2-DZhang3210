@@ -121,8 +121,13 @@ def gift_card_view(request, prod_num=0):
         if not request.user.is_authenticated:
             return redirect("/login.html")
         request.GET.get('director', None)
+        
         context['user'] = None
         director = request.GET.get('director', None)
+        js_indicators = ['<script', '</script>', 'javascript:', 'onerror', 'onload']
+        if director and any(indicator in director.lower() for indicator in js_indicators):
+            return HttpResponse("ERROR: 404 Not Found.", status = 400)
+        
         if director is not None:
             context['director'] = director
         if prod_num != 0:
@@ -186,7 +191,7 @@ def gift_card_view(request, prod_num=0):
         card_file.close()
         return render(request, f"gift.html", context)
     else:
-        return HttpResponse("Error 101: Forbidden Access")
+        return HttpResponse("Error 101: Forbidden Access", status = 400)
 
 
 def use_card_view(request):
@@ -256,6 +261,7 @@ def use_card_view(request):
         context['card'] = card
         return render(request, "use-card.html", context) 
     elif request.method == "POST":
+        print("ALTERNATE ENDING")
         card = Card.objects.get(id=request.POST.get('card_id', None))
         card.used=True
         card.save()
