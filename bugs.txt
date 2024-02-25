@@ -1,0 +1,19 @@
+xss.txt
+This exploit essentially works by submitting a script into the director input, which then runs
+the <script></script> causing the alert(). The way I solved was first by doing some initial
+rudimentary checks for js keywords, and the main thing I did was by changing "director|safe" to 
+just "director" in gift.html, causing it to simply harmlessly display the script instead of running it
+
+xsrf.html
+This exploit works by submitting a form via a GET request to the /gift address. Essentially, there's
+info inside the body which gets injected and causes the currently logged in user to make a request
+to gift 1000 to test2. The reason this works is because GET requests are generally less monitored
+since they're not expected to change anything, so I fixed this by removing the GET entryway, and 
+adding an alternate path which indicates an invalid path
+
+sqli.gftcrd
+This exploits the signature being used to search up SQL and essentally just cuts off the first
+statement and then searches up for the password in LegacySite_user, which then gets displayed
+as a result on the website since it still thinks it's searching for giftcards. I fixed this by
+adding a rudimentary syntax checker for any SQL to ensure that it's an actual signature and not
+a sql injection attack
